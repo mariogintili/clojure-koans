@@ -1,4 +1,10 @@
-# Clojure Koans
+# Personal note
+
+This is the first set of koans for any programming language I ever finish! :confetti_ball:
+
+Clojure is a really interesting language that I wouldn't use for web development.
+
+## Clojure Koans
 
 The Clojure Koans are a fun and easy way to get started with Clojure - no
 experience assumed or required.  Just follow the instructions below to start
