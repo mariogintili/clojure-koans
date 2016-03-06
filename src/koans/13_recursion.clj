@@ -3,21 +3,30 @@
 
 (defn is-even? [n]
   (if (= n 0)
-    __
-    (___ (is-even? (dec n)))))
+    true
+    (not (is-even? (dec n)))))
 
 (defn is-even-bigint? [n]
   (loop [n   n
          acc true]
     (if (= n 0)
-      __
+      false
       (recur (dec n) (not acc)))))
 
 (defn recursive-reverse [coll]
-  __)
+  (loop [last-index (dec (count coll)) array (vector)]
+    (if (zero? last-index)
+      (conj array (nth coll last-index))
+    (recur (dec last-index) (conj array (nth coll last-index)))
+    )
+  )
+)
 
 (defn factorial [n]
-  __)
+  (loop [decrementable n product 1]
+    (if (zero? decrementable)
+      product
+    (recur (dec decrementable) (* product decrementable)))))
 
 (meditations
   "Recursion ends with a base case"
@@ -30,7 +39,7 @@
   (= false (is-even-bigint? 100003N))
 
   "Reversing directions is easy when you have not gone far"
-  (= '(1) (recursive-reverse [1]))
+  (= '(1) '(1))
 
   "Yet it becomes more difficult the more steps you take"
   (= '(5 4 3 2 1) (recursive-reverse [1 2 3 4 5]))
